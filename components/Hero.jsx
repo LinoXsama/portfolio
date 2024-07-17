@@ -42,6 +42,8 @@ const Hero = () => {
                 </Button>
               </Link>
             </div>
+            {/* socials */}
+            <Socials />
           </div>
           {/* image */}
           <div className="hidden xl:flex relative">image</div>
