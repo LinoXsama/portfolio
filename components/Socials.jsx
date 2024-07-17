@@ -5,7 +5,7 @@ import {
   RiLinkedinFill,
   RiGithubFill,
   RiFacebookFill,
-  RiInstallFill
+  RiInstagramFill
 } from "react-icons/ri";
 
 import Link from "next/link";
@@ -13,23 +13,23 @@ import Link from "next/link";
 const icons = [
   {
     path: '/',
-    path: <RiYoutubeFill />,
+    name: <RiYoutubeFill />,
   },
   {
     path: '/',
-    path: <RiLinkedinFill />,
+    name: <RiLinkedinFill />,
   },
   {
     path: '/',
-    path: <RiGithubFill />,
+    name: <RiGithubFill />,
   },
   {
     path: '/',
-    path: <RiFacebookFill />,
+    name: <RiFacebookFill />,
   },
   {
     path: '/',
-    path: <RiInstallFill />,
+    name: <RiInstagramFill />,
   },
 ];
 
@@ -38,7 +38,13 @@ const Socials = ({ containerStyles, iconsStyles }) => {
   return (
     <div className={`${containerStyles}`}>
       {icons.map((icon, index) => {
-        
+        return (
+          <Link href={icon.path} key={index}>
+            <div className={`${iconsStyles}`}>
+              {icon.name}
+            </div>
+          </Link>
+        );
       })}
     </div>
   );
