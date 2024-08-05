@@ -41,6 +41,26 @@ const qualificationData = [
             qualifications: 'Certificat professionnel de développeur web & mobile',
             years: '2023 - 2024',
          },
+         {
+            university: 'Google Career Certificates',
+            qualifications: 'AI Essentials',
+            years: '2024',
+         },
+      ],
+   },
+   {
+      title: 'experience',
+      data: [
+         {
+            company: 'Free-Lance',
+            qualifications: 'Développeur Next JS',
+            years: 'Mars 2024',
+         },
+         {
+            company: 'Studi',
+            qualifications: "Développement d'une application PHP de présentation de véhicules",
+            years: 'Nov - Déc 2023',
+         },
       ],
    },
 ];
@@ -50,7 +70,7 @@ const skillData = [
       title: 'skills',
       data: [
          {
-            name: 'HTML, CSS',
+            name: 'HTML & CSS',
          },
          {
             name: 'JavaScript',
@@ -63,11 +83,36 @@ const skillData = [
          },
       ],
    },
+   {
+      title: 'tools',
+      data: [
+         {
+            imgPath: '/about/vscode.svg',
+         },
+         {
+            imgPath: '/about/figma.svg',
+         },
+         {
+            imgPath: '/about/notion.svg',
+         },
+      ],
+   },
 ];
 
 const About = () => {
+   const getData = (arr, title) => {
+      return arr.find((item) => item.title === title);
+   };
+
+   console.log(getData(qualificationData, 'experience'))
    return (
-      <div>About</div>
+      <section>
+         <div className="container mx-auto">
+            <h2 className="section-title">
+               About me
+            </h2>
+         </div>
+      </section>
    );
 };
 
