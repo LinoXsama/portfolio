@@ -134,15 +134,21 @@ const About = () => {
                                  I specialize in crafting intuitive websites with cutting-edge technology, delivering dynamic and engaginguser experiences.
                               </p>
                               {/* icons */}
-                              <div>
+                              <div className="grid xl:grid-cols-2 gap-4 mb-12">
                                  {infoData.map((item, index) => {
                                     return(
-                                       <div key={index}>
+                                       <div className="flex items-center gap-x-4 mx-auto xl:mx-0" key={index}>
                                           <div className="text-primary">{item.icon}</div>
                                           <div>{item.text}</div>
                                        </div>
                                     );
                                  })}
+                              </div>
+                              {/* languages */}
+                              <div className="flex flex-col gap-y-2">
+                                 <div className="text-primary">Langages</div>
+                                 <div className="border-b border-border"></div>
+                                 <div>Français, Russe, Anglais</div>
                               </div>
                            </div>
                         </TabsContent>
