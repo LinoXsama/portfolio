@@ -128,11 +128,22 @@ const About = () => {
                      <div className="text-lg mt-12 xl:mt-8">
                         {/* personal */}
                         <TabsContent value="personal">
-                           <div>
-                              <h3>Services irréprochables</h3>
-                              <p>I specialize in crafting intuitive websites with cutting-edge technology, delivering dynamic and engaging
-                              user experiences.
+                           <div className="text-center xl:text-left">
+                              <h3 className="h3 mb-4">Services irréprochables</h3>
+                              <p className="subtitle max-w-xl mx-auto xl:mx-0">
+                                 I specialize in crafting intuitive websites with cutting-edge technology, delivering dynamic and engaginguser experiences.
                               </p>
+                              {/* icons */}
+                              <div>
+                                 {infoData.map((item, index) => {
+                                    return(
+                                       <div key={index}>
+                                          <div className="text-primary">{item.icon}</div>
+                                          <div>{item.text}</div>
+                                       </div>
+                                    );
+                                 })}
+                              </div>
                            </div>
                         </TabsContent>
                         {/* qualifications */}
