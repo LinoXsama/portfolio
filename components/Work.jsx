@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/Link';
+import Link from 'next/link';
 import { Button } from './ui/Button';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -74,7 +74,7 @@ const Work = () => {
 				{/* slider */}
 				<div className='xl:max-w-[1000px] xl:absolute right-0 top-0'>
 					<Swiper
-						className='h-[480px]'
+						className='h-[560px]'
 						slidesPerView={1}
 						breakpoints={{
 							640: {
@@ -86,7 +86,7 @@ const Work = () => {
 						pagination={{ clickable: true }}
 					>
 						{/* show only the first 4 projects for the slider */}
-						{projectData.slice(0.4).map((project, index) => {
+						{projectData.slice(0, 4).map((project, index) => {
 							return (
 								<SwiperSlide key={index}>
 									<ProjectCard project={project} />
