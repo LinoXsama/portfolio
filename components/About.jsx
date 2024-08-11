@@ -154,7 +154,7 @@ const About = () => {
                         </TabsContent>
                         {/* qualifications */}
                         <TabsContent value="qualifications">
-                           <div className="">
+                           <div >
                               <h3 className="h3 mb-8 text-center xl:text-left">
                                  My Awesome Journey
                               </h3>
@@ -178,7 +178,7 @@ const About = () => {
                                                 <div className="h-[84px] w-[1px] bg-border relative ml-2">
                                                    <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                                                 </div>
-                                                <div className="">
+                                                <div >
                                                    <div className="font-semibold text-xl leading-none mb-2">
                                                       {company}
                                                    </div>
@@ -212,7 +212,7 @@ const About = () => {
                                                 <div className="h-[84px] w-[1px] bg-border relative ml-2">
                                                    <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                                                 </div>
-                                                <div className="">
+                                                <div >
                                                    <div className="font-semibold text-xl leading-none mb-2">
                                                       {university}
                                                    </div>
@@ -240,7 +240,7 @@ const About = () => {
                                  <h4 className="text-xl font-semibold mb-2">Compétences</h4>
                                  <div className="border-b border-border mb-4"></div>
                                  {/* skill list */}
-                                 <div className="">
+                                 <div >
                                     {getData(skillData, 'skills').data.map((item, index) => {
                                        const { name } = item;
 
@@ -266,7 +266,7 @@ const About = () => {
                                        const { imgPath } = item;
 
                                        return (
-                                          <div className="" key={index}>
+                                          <div key={index}>
                                              <Image src={imgPath} width={48} height={48} alt='' priority />
                                           </div>
                                        );
