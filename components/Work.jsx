@@ -61,7 +61,7 @@ const Work = () => {
 		<section className='relative mb-12 xl:mb-48'>
 			<div className="container mx-auto">
 				{/* text */}
-				<div className='bg-pink-100 max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center xl:items-start'>
+				<div className='bg-pink-100 max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start'>
 					<h2 className='section-title mb-4'>Projets récents</h2>
 					<p className='subtitle mb-8'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
