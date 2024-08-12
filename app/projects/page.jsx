@@ -57,15 +57,23 @@ const projectData = [
 ];
 
 const uniqueCategories = [
-  'Tout',
+  'tout',
   ...new Set(projectData.map((item) => item.category)),
 ];
 
 
 const Projects = () => {
   const [categories, setCategories] = useState(uniqueCategories);
-  const [category, setCategory] = useState('all projects');
-  console.log(category)
+  const [category, setCategory] = useState('tout');
+
+  const filteredProjects = projectData.filter((project) => {
+    return (
+      category === 'tout'
+      ? project
+      : project.category === category
+    );
+  });
+  console.log(filteredProjects)
   return (
     <section className='min-h-screen pt-12'>
       <div className="container mx-auto">
@@ -91,7 +99,9 @@ const Projects = () => {
           </TabsList>
 
           {/* tabs content */}
-            
+          <div className="">
+            tabs content
+          </div>
         </Tabs>
       </div>
     </section>
