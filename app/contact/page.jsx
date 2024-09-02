@@ -1,6 +1,6 @@
 import { MailIcon, HomeIcon, PhoneCall } from 'lucide-react';
 // my custom component Form
-// import Form from '@/components/Form';
+import Form from '@/components/Form';
 
 
 const Contact = () => {
@@ -13,7 +13,7 @@ const Contact = () => {
           <div  className='flex flex-col justify-center'>
             <div className='flex items-center gap-x-4 text-primary text-lg mb-4'>
               <span className='w-[30px] h-[2px] bg-primary'></span>
-                Say Hello 👋
+                Hello 👋
             </div>
             <h1 className='h1 max-w-md md-8'>Travaillons ensemble !</h1>
             <p className='subtitle max-w-[400px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -41,7 +41,7 @@ const Contact = () => {
               <div>06 59 34 82 49</div>
             </div>
           </div>
-          {/* <Form /> */}
+          <Form />
         </div>
       </div>
     </section>
