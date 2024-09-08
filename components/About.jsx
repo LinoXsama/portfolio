@@ -79,7 +79,7 @@ const skillData = [
             name: 'React & Next JS',
          },
          {
-            name: 'React Native avec Expo',
+            name: 'Expo',
          },
       ],
    },
@@ -95,6 +95,9 @@ const skillData = [
          {
             imgPath: '/about/notion.svg',
          },
+         {
+            imgPath: '/about/git.svg',
+         },
       ],
    },
 ];
@@ -109,7 +112,7 @@ const About = () => {
       <section className="xl:h-[860px] pb-12 xl:py-24">
          <div className="container mx-auto">
             <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
-               About me
+               A propos de moi
             </h2>
             {/* Image */}
             <div className="flex flex-col xl:flex-row">
@@ -156,7 +159,7 @@ const About = () => {
                         <TabsContent value="qualifications">
                            <div >
                               <h3 className="h3 mb-8 text-center xl:text-left">
-                                 My Awesome Journey
+                                 Mon parcours 
                               </h3>
                               {/* experience & education wrapper */}
                               <div className="grid md:grid-cols-2 gap-y-8">
@@ -234,7 +237,7 @@ const About = () => {
                         {/* skills */}
                         <TabsContent value="skills">
                            <div className="text-center xl:text-left">
-                              <h3 className="h3 mb-8">Mes outils au quotidien ?</h3>
+                              <h3 className="h3 mb-8">Mes outils au quotidien</h3>
                               {/* skills */}
                               <div className="mb-16">
                                  <h4 className="text-xl font-semibold mb-2">Compétences</h4>

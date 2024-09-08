@@ -11,17 +11,17 @@ const servicesData = [
    {
       icon: < GanttChartSquare size={72} strokeWidth={0.8} />,
       title: 'Web Design',
-      description: 'Lorem impsum dolor sit amet consectetur adipisicing elit. Hic quasi libero quidem sit deserunt fuga.'
+      description: "J'utilise souvent Figma pour concevoir des interfaces utilisateur attractives et fonctionnelles, en optimisant l'expérience utilisateur et en facilitant la collaboration avec les équipes de développement."
    },
    {
       icon: < Blocks size={72} strokeWidth={0.8} />,
-      title: 'Développement web',
-      description: 'Lorem impsum dolor sit amet consectetur adipisicing elit. Hic quasi libero quidem sit deserunt fuga.'
+      title: 'Développement Frontend',
+      description: "Next JS est mon framework préféré pour la conception d'interface utilisateur pour application web. Et quand je ne suis pas sur une appli web, j'en développe une pour Android avec Expo !"
    },
    {
       icon: < Gem size={72} strokeWidth={0.8} />,
-      title: "Développement d'applications",
-      description: 'Lorem impsum dolor sit amet consectetur adipisicing elit. Hic quasi libero quidem sit deserunt fuga.'
+      title: "Développement Backend",
+      description: 'Bien sûr, je ne néglige pas le Backend. Node JS, Express, PostgreSQL sont alors mes meilleurs aliés.'
    },
 ];
 
