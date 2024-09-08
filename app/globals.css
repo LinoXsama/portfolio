@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  
-@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 19% 16%;
@@ -61,8 +59,6 @@
     --chart-4: ;
     --chart-5: ;
   }
-}
-
 }
 
 @layer base {
