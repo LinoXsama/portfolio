@@ -76,6 +76,12 @@ const skillData = [
             name: 'JavaScript',
          },
          {
+            name: 'PHP',
+         },
+         {
+            name: 'SQL',
+         },
+         {
             name: 'React & Next JS',
          },
          {
@@ -87,16 +93,25 @@ const skillData = [
       title: 'tools',
       data: [
          {
-            imgPath: '/about/vscode.svg',
-         },
-         {
             imgPath: '/about/figma.svg',
          },
          {
-            imgPath: '/about/notion.svg',
+            imgPath: '/about/vscode.svg',
+         },
+         {
+            imgPath: '/about/nodejs.svg',
+         },
+         {
+            imgPath: '/about/react.svg',
+         },
+         {
+            imgPath: '/about/nextjs.svg',
          },
          {
             imgPath: '/about/git.svg',
+         },
+         {
+            imgPath: '/about/notion.svg',
          },
       ],
    },
@@ -134,7 +149,7 @@ const About = () => {
                            <div className="text-center xl:text-left">
                               <h3 className="h3 mb-4">Services irréprochables</h3>
                               <p className="subtitle max-w-xl mx-auto xl:mx-0">
-                                 I specialize in crafting intuitive websites with cutting-edge technology, delivering dynamic and engaginguser experiences.
+                                 J'adore concevoir des interface utilisateurs fluides et adaptatives à tous les terminaux
                               </p>
                               {/* icons */}
                               <div className="grid xl:grid-cols-2 gap-4 mb-12">

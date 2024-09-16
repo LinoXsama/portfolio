@@ -21,7 +21,7 @@ const servicesData = [
    {
       icon: < Gem size={72} strokeWidth={0.8} />,
       title: "Développement Backend",
-      description: 'Bien sûr, je ne néglige pas le Backend. Node JS, Express, PostgreSQL sont alors mes meilleurs aliés.'
+      description: "Grace à mes connaissances de Node.js et de Express, je conçois des applications web performantes et évolutives. Je maîtrise la gestion des API, le traitement des données, et l'intégration de solutions adaptées aux besoins."
    },
 ];
 
