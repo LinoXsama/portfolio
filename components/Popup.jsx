@@ -4,18 +4,18 @@ import { useToast } from "@/hooks/use-toast";
 
 import { useEffect } from 'react';
 
-const Toast = ({ title = '', message }) => {
+const Popup = ({ title = '', message, styles = '' }) => {
    const { toast } = useToast();
 
    useEffect(() => {
       toast({
          title: title || undefined,
          description: message,
-         className: 'bg-blue-500 text-white'
+         className: styles
       });
    }, [toast]); // Appel automatique au chargement du composant
 
    return null;
 }
 
-export default Toast;
+export default Popup;
