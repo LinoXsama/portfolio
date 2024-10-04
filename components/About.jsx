@@ -99,6 +99,9 @@ const skillData = [
             imgPath: '/about/vscode.svg',
          },
          {
+            imgPath: '/about/github.svg',
+         },
+         {
             imgPath: '/about/nodejs.svg',
          },
          {
@@ -108,7 +111,7 @@ const skillData = [
             imgPath: '/about/nextjs.svg',
          },
          {
-            imgPath: '/about/git.svg',
+            imgPath: '/about/expo.svg',
          },
          {
             imgPath: '/about/notion.svg',
