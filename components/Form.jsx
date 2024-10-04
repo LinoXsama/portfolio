@@ -4,16 +4,10 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 
-import { User, MailIcon, ArrowRightIcon, MessageSquare } from 'lucide-react';
-
-import { useState } from 'react';
+import { User, MailIcon, ArrowRightIcon, MessageSquare, LoaderPinwheel } from 'lucide-react';
 
 
-const Form = () => {
-
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState(null);
+const Form = ({ formData, setFormData, isSubmitting, setIsSubmitting, error, setError, setShowPopup }) => {
 
   const handleChange = (e) => {
 
@@ -33,28 +27,32 @@ const Form = () => {
   };
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    const response = await fetch('/api/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    });
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
 
-    if (!response.ok) {
-      console.error('HTTP error', response.status);
-      setError('An error occurred while submitting the form.'); // Gère l'erreur
-      return;
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result);
+        setShowPopup('success'); // Afficher le toast de succès
+      }
+
+    } catch (error) {
+      setError('An error occurred.');
+      setShowPopup('error'); // Afficher le toast de succès
+
+    } finally {
+      setIsSubmitting(false);
     }
-
-    
-
-    // const result = await response.json();
-    // console.log(result);
   };
 
 
@@ -98,8 +96,9 @@ const Form = () => {
         <MessageSquare className='absolute top-4 right-6' size={20} />
       </div>
 
-      <Button className='flex items-center max-w-[166px] gap-x-1'>
-        Let's Talk <ArrowRightIcon size={20} />
+      <Button className='flex items-center justify-center max-w-[166px] gap-x-1'>
+        Envoyer <ArrowRightIcon size={20} />
+        {isSubmitting && <LoaderPinwheel className='ml-2 animate-spin' />}
       </Button>
     </form>
   );
