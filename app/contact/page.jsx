@@ -5,15 +5,16 @@ import { MailIcon, HomeIcon, PhoneCall } from 'lucide-react';
 import Form from '@/components/Form';
 import Popup from '@/components/Popup';
 
-import { useState } from 'react';
+import { useReducer } from 'react';
+import { initialState, formReducer } from '@/reducers/formReducer';
 
 
 const Contact = () => {
 
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState(null);
-  const [showPopup, setShowPopup] = useState(null);
+  const [state, dispatch] = useReducer(formReducer, initialState);
+  const { formData, isSubmitting, showPopup, error} = state;
+
+  // console.log(error);
 
   return (
     <section>
@@ -69,12 +70,8 @@ const Contact = () => {
           </div>
           <Form
             formData={formData}
-            setFormData={setFormData}
             isSubmitting={isSubmitting}
-            setIsSubmitting={setIsSubmitting}
-            error={error}
-            setError={setError}
-            setShowPopup={setShowPopup}
+            dispatch={dispatch}
           />
         </div>
       </div>

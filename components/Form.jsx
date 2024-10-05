@@ -7,12 +7,12 @@ import { Textarea } from './ui/textarea';
 import { User, MailIcon, ArrowRightIcon, MessageSquare, LoaderPinwheel } from 'lucide-react';
 
 
-const Form = ({ formData, setFormData, isSubmitting, setIsSubmitting, error, setError, setShowPopup }) => {
+const Form = ({ formData, isSubmitting, dispatch }) => {
 
   const handleChange = (e) => {
 
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    dispatch({ type: 'SET_FORM_DATA', payload: { [name]: value }});
 
     // Affichage du contenu de l'état formData !
 
@@ -28,8 +28,8 @@ const Form = ({ formData, setFormData, isSubmitting, setIsSubmitting, error, set
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
+    dispatch({ type: 'SET_IS_SUBMITTING', payload: true });
+    dispatch({ type: 'SET_ERROR', payload: null });
 
     try {
       const response = await fetch('/api/submit', {
@@ -43,15 +43,15 @@ const Form = ({ formData, setFormData, isSubmitting, setIsSubmitting, error, set
       if (response.ok) {
         const result = await response.json();
         console.log(result);
-        setShowPopup('success'); // Afficher le toast de succès
+        dispatch({ type: 'SET_SHOW_POPUP', payload: 'success' }); // Afficher le toast de succès
       }
 
     } catch (error) {
-      setError('An error occurred.');
-      setShowPopup('error'); // Afficher le toast de succès
+      dispatch({ type: 'SET_ERROR', payload: null });
+      dispatch({ type: 'SET_SHOW_POPUP', payload: 'error' });
 
     } finally {
-      setIsSubmitting(false);
+      dispatch({ type: 'SET_IS_SUBMITTING', payload: false });
     }
   };
 
