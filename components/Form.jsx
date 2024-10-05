@@ -27,6 +27,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     dispatch({ type: 'SET_IS_SUBMITTING', payload: true });
     dispatch({ type: 'SET_ERROR', payload: null });
@@ -47,7 +48,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
       }
 
     } catch (error) {
-      dispatch({ type: 'SET_ERROR', payload: null });
+      dispatch({ type: 'SET_ERROR', payload: error });
       dispatch({ type: 'SET_SHOW_POPUP', payload: 'error' });
 
     } finally {
