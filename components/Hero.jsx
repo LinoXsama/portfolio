@@ -23,23 +23,23 @@ const Hero = () => {
             <div className="text-sm uppercase font-semibold mb-4 text-primary tracking-[4px] ">
               Développeur web & mobile (Android)
             </div>
-            <h1 className="h1 mb-4">Hello,&nbsp;&nbsp;je m&apos;appelle Merlin Migan</h1>
+            <h1 className="h1 mb-4">Hello,&nbsp;&nbsp;je m&apos;appelle Morel</h1>
             <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
               Passionné par la création d'interfaces utilisateur fluides et intuitives, je m'engage à fournir des 
               résultats de haute qualité qui répondent aux besoins des utilisateurs et aux objectifs des projets.
             </p>
             {/* buttons */}
-            <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12">
+            <div className="flex flex-col gap-y-5 md:flex-row gap-x-5 mx-auto xl:mx-0 mb-12">
               <Link href="/contact">
                 <Button className="gap-x-2">
                   Me contacer <Send size={18} />
                 </Button>
               </Link>
-              <Link href="/contact">
+              {/* <Link href="/contact">
                 <Button variant="secondary" className="gap-x-2">
                   Télécharger mon CV <Download size={18} />
                 </Button>
-              </Link>
+              </Link> */}
             </div>
             {/* socials */}
             <Socials
