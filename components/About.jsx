@@ -140,7 +140,7 @@ const About = () => {
                {/* tabs */}
                <div className="flex-1">
                   <Tabs defaultValue="personal">
-                     <TabsList className="w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none">
+                     <TabsList className="items-center justify-center xl:bg-white p-1 text-muted-foreground rounded-[30px] dark:md:bg-secondary w-full grid h-full md:grid-cols-3 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none">
                         <TabsTrigger className="w-[162px] xl:w-auto" value="personal">Informations</TabsTrigger>
                         <TabsTrigger className="w-[162px] xl:w-auto" value="qualifications">Qualifications</TabsTrigger>
                         <TabsTrigger className="w-[162px] xl:w-auto" value="skills">Compétences</TabsTrigger>
@@ -177,7 +177,7 @@ const About = () => {
                         <TabsContent value="qualifications">
                            <div >
                               <h3 className="h3 mb-8 text-center xl:text-left">
-                                 Mon parcours 
+                                 Mon parcours
                               </h3>
                               {/* experience & education wrapper */}
                               <div className="grid md:grid-cols-2 gap-y-8">

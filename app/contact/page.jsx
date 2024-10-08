@@ -5,7 +5,7 @@ import { MailIcon, HomeIcon, PhoneCall } from 'lucide-react';
 import Form from '@/components/Form';
 import Popup from '@/components/Popup';
 
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import { initialState, formReducer } from '@/reducers/formReducer';
 
 
@@ -14,8 +14,9 @@ const Contact = () => {
   const [state, dispatch] = useReducer(formReducer, initialState);
   const { formData, isSubmitting, showPopup, error} = state;
 
-  // console.log(error);
+  console.log(formData, isSubmitting, showPopup, error);
 
+  
   return (
     <section>
       {showPopup === 'success' &&

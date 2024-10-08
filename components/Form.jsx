@@ -1,4 +1,4 @@
-'use client';
+'use client'; // à supprimer
 
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -44,7 +44,10 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
       if (response.ok) {
         const result = await response.json();
         console.log(result);
-        dispatch({ type: 'SET_SHOW_POPUP', payload: 'success' }); // Afficher le toast de succès
+        dispatch({ type: 'SET_SHOW_POPUP', payload: 'success' });
+
+        // Réinitialiser les champs du formulaire !
+        dispatch({ type: 'SET_FORM_DATA', payload: { name: '', email: '', message: '' } });
       }
 
     } catch (error) {
