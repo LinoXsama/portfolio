@@ -8,7 +8,7 @@ import { User2, MailIcon, HomeIcon, PhoneCall, GraduationCap, Calendar, Briefcas
 const infoData = [
    {
       icon: <User2 size={20} />,
-      text: 'Merlin Migan',
+      text: 'Morel',
    },
    {
       icon: <PhoneCall size={20} />,
@@ -16,7 +16,7 @@ const infoData = [
    },
    {
       icon: <MailIcon size={20} />,
-      text: 'merlin.migan@gmail.com',
+      text: 'elmorelyss@gmail.com',
    },
    {
       icon: <Calendar size={20} />,
@@ -134,16 +134,16 @@ const About = () => {
             </h2>
             {/* Image */}
             <div className="flex flex-col xl:flex-row">
-               <div className="hidden xl:flex flex-1 relative">
+               {/* <div className="hidden xl:flex flex-1 relative">
                   <DevImg containerStyles='bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative' imgSrc='/about/developer.png' />
-               </div>
+               </div> */}
                {/* tabs */}
                <div className="flex-1">
                   <Tabs defaultValue="personal">
-                     <TabsList className="items-center justify-center xl:bg-white p-1 text-muted-foreground rounded-[30px] dark:md:bg-secondary w-full grid h-full md:grid-cols-3 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none">
+                     <TabsList className="items-center justify-center xl:bg-white p-1 text-muted-foreground rounded-[30px] dark:md:bg-secondary w-full grid h-full md:grid-cols-3 max-w-[500px] mb-12 mx-auto md:border dark:border-none">
                         <TabsTrigger className="w-[162px] xl:w-auto" value="personal">Informations</TabsTrigger>
                         <TabsTrigger className="w-[162px] xl:w-auto" value="qualifications">Qualifications</TabsTrigger>
-                        <TabsTrigger className="w-[162px] xl:w-auto" value="skills">Compétences</TabsTrigger>
+                        <TabsTrigger className="w-[164px] xl:w-auto" value="skills">Compétences</TabsTrigger>
                      </TabsList>
                      {/* tabls content */}
                      <div className="text-lg mt-12 xl:mt-8">
