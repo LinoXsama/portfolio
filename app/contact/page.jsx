@@ -14,7 +14,7 @@ const Contact = () => {
   const [state, dispatch] = useReducer(formReducer, initialState);
   const { formData, isSubmitting, showPopup, error} = state;
 
-  console.log('formData:', formData, 'isSubmitting:', isSubmitting, 'showPopup:', showPopup, 'error:', error);
+  // console.log('formData:', formData, 'isSubmitting:', isSubmitting, 'showPopup:', showPopup, 'error:', error);
 
 
   return (
@@ -70,9 +70,9 @@ const Contact = () => {
             </div>
           </div>
           <Form
-            formData={formData}
-            isSubmitting={isSubmitting}
-            dispatch={dispatch}
+            formDataState={formData}
+            isSubmittingState={isSubmitting}
+            dispatcher={dispatch}
           />
         </div>
       </div>

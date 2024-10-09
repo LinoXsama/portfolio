@@ -6,12 +6,12 @@ import { Textarea } from './ui/textarea';
 import { User, MailIcon, ArrowRightIcon, MessageSquare, LoaderPinwheel } from 'lucide-react';
 
 
-const Form = ({ formData, isSubmitting, dispatch }) => {
+const Form = ({ formDataState, isSubmittingState, dispatcher }) => {
 
   const handleChange = (e) => {
 
     const { name, value } = e.target;
-    dispatch({ type: 'SET_FORM_DATA', payload: { [name]: value }});
+    dispatcher({ type: 'SET_FORM_DATA', payload: { [name]: value }});
 
     // Affichage du contenu de l'état formData !
 
@@ -28,9 +28,9 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
   const handleSubmit = async (e) => {
 
     e.preventDefault();
-    dispatch({ type: 'SET_IS_SUBMITTING', payload: true });
-    dispatch({ type: 'SET_ERROR', payload: null });
-    dispatch({ type: 'SET_SHOW_POPUP', payload: null });
+    dispatcher({ type: 'SET_IS_SUBMITTING', payload: true });
+    dispatcher({ type: 'SET_ERROR', payload: null });
+    dispatcher({ type: 'SET_SHOW_POPUP', payload: null });
     
     
     try {
@@ -39,7 +39,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formDataState)
       });
       
       const result = await response.json();
@@ -47,23 +47,23 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
       if (response.ok) {
         console.log(result);
         // Affichage de la Popup de succès !
-        dispatch({ type: 'SET_SHOW_POPUP', payload: 'success' });
+        dispatcher({ type: 'SET_SHOW_POPUP', payload: 'success' });
 
         // Réinitialisation des champs du formulaire lors qu'il a été soumis avec succès !
-        dispatch({ type: 'SET_FORM_DATA', payload: { name: '', email: '', message: '' } });
+        dispatcher({ type: 'SET_FORM_DATA', payload: { name: '', email: '', message: '' } });
       } 
       else {
         console.log(result);
         // Affichage de la Popup d'erreur !
-        dispatch({ type: 'SET_SHOW_POPUP', payload: 'error' });
+        dispatcher({ type: 'SET_SHOW_POPUP', payload: 'error' });
       }
 
     } catch (error) {
-      dispatch({ type: 'SET_ERROR', payload: error });
-      dispatch({ type: 'SET_SHOW_POPUP', payload: 'error' });
+      dispatcher({ type: 'SET_ERROR', payload: error });
+      dispatcher({ type: 'SET_SHOW_POPUP', payload: 'error' });
 
     } finally {
-      dispatch({ type: 'SET_IS_SUBMITTING', payload: false });
+      dispatcher({ type: 'SET_IS_SUBMITTING', payload: false });
     }
   };
 
@@ -75,7 +75,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
         <Input
           type="text"
           name="name"
-          value={formData.name}
+          value={formDataState.name}
           onChange={handleChange}
           placeholder="Nom"
           required
@@ -88,7 +88,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
         <Input
           type="email"
           name="email"
-          value={formData.email}
+          value={formDataState.email}
           onChange={handleChange}
           placeholder="Email"
           required
@@ -100,7 +100,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
       <div className='relative flex items-center'>
         <Textarea
           name="message"
-          value={formData.message}
+          value={formDataState.message}
           onChange={handleChange}
           placeholder="Ecrivez votre message ici..."
           required
@@ -111,7 +111,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
       {/* Bouton d'envoi du formulaire ! */}
       <Button className='flex justify-center items-center max-w-[166px] gap-x-1'>
         Envoyer <ArrowRightIcon size={20} />
-        {isSubmitting && <LoaderPinwheel className='ml-2 animate-spin' />}
+        {isSubmittingState && <LoaderPinwheel className='ml-2 animate-spin' />}
       </Button>
     </form>
   );
