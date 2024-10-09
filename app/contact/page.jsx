@@ -5,7 +5,7 @@ import { MailIcon, HomeIcon, PhoneCall } from 'lucide-react';
 import Form from '@/components/Form';
 import Popup from '@/components/Popup';
 
-import { useEffect, useReducer } from 'react';
+import { useReducer } from 'react';
 import { initialState, formReducer } from '@/reducers/formReducer';
 
 
@@ -14,9 +14,9 @@ const Contact = () => {
   const [state, dispatch] = useReducer(formReducer, initialState);
   const { formData, isSubmitting, showPopup, error} = state;
 
-  console.log(formData, isSubmitting, showPopup, error);
+  console.log('formData:', formData, 'isSubmitting:', isSubmitting, 'showPopup:', showPopup, 'error:', error);
 
-  
+
   return (
     <section>
       {showPopup === 'success' &&
@@ -41,7 +41,7 @@ const Contact = () => {
           <div className='flex flex-col justify-center'>
             <div className='flex items-center gap-x-4 text-primary text-lg mb-4'>
               <span className='w-[30px] h-[2px] bg-primary'></span>
-              Hello 👋
+              Hello 😄 !
             </div>
             <h1 className='h1 max-w-md md-8'>Travaillons ensemble !</h1>
             <p className='subtitle max-w-[400px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -56,7 +56,7 @@ const Contact = () => {
             {/* mail */}
             <div className='flex items-center gap-x-8'>
               <MailIcon size={18} className='text-primary' />
-              <div>merlin.migan@gmail.com</div>
+              <div>elmorelyss@gmail.com</div>
             </div>
             {/* address */}
             <div className='flex items-center gap-x-8'>
