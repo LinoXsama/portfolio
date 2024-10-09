@@ -1,3 +1,4 @@
+// Composants shadcn !
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -29,7 +30,9 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
     e.preventDefault();
     dispatch({ type: 'SET_IS_SUBMITTING', payload: true });
     dispatch({ type: 'SET_ERROR', payload: null });
-
+    dispatch({ type: 'SET_SHOW_POPUP', payload: null });
+    
+    
     try {
       const response = await fetch('/api/submit', {
         method: 'POST',
@@ -38,14 +41,21 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
         },
         body: JSON.stringify(formData)
       });
+      
+      const result = await response.json();
 
       if (response.ok) {
-        const result = await response.json();
         console.log(result);
+        // Affichage de la Popup de succès !
         dispatch({ type: 'SET_SHOW_POPUP', payload: 'success' });
 
-        // Réinitialiser les champs du formulaire !
+        // Réinitialisation des champs du formulaire lors qu'il a été soumis avec succès !
         dispatch({ type: 'SET_FORM_DATA', payload: { name: '', email: '', message: '' } });
+      } 
+      else {
+        console.log(result);
+        // Affichage de la Popup d'erreur !
+        dispatch({ type: 'SET_SHOW_POPUP', payload: 'error' });
       }
 
     } catch (error) {
@@ -60,7 +70,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
 
   return (
     <form onSubmit={handleSubmit} className='flex flex-col gap-y-4'>
-      {/* name input */}
+      {/* Champ nom ! */}
       <div className='relative flex items-center'>
         <Input
           type="text"
@@ -73,7 +83,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
         <User className='absolute right-6' size={20} />
       </div>
 
-      {/* email input */}
+      {/* Champ email ! */}
       <div className='relative flex items-center'>
         <Input
           type="email"
@@ -86,7 +96,7 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
         <MailIcon className='absolute right-6' size={20} />
       </div>
 
-      {/* message textarea */}
+      {/* Zone de saisie du message ! */}
       <div className='relative flex items-center'>
         <Textarea
           name="message"
@@ -98,7 +108,8 @@ const Form = ({ formData, isSubmitting, dispatch }) => {
         <MessageSquare className='absolute top-4 right-6' size={20} />
       </div>
 
-      <Button className='flex items-center justify-center max-w-[166px] gap-x-1'>
+      {/* Bouton d'envoi du formulaire ! */}
+      <Button className='flex justify-center items-center max-w-[166px] gap-x-1'>
         Envoyer <ArrowRightIcon size={20} />
         {isSubmitting && <LoaderPinwheel className='ml-2 animate-spin' />}
       </Button>

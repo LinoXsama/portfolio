@@ -28,7 +28,7 @@ const Contact = () => {
 
       {showPopup === 'error' &&
         <Popup
-          title="Oh oh une erreur !"
+          title="Oh oh une erreur s'est produite !"
           message="Il semble y avoir un souci avec l'envoi du formulaire"
           styles='bg-red-500 text-white'
         />
